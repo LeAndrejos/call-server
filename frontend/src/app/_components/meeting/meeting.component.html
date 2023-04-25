@@ -1,0 +1,29 @@
+<div style="text-align: center; margin-top: 50px">
+  <div>
+    <video #videoConference width="800" height="480" controls autoplay></video>
+  </div>
+  <div>
+    <div>
+      <button type="button" mat-raised-button color="button-color" class="course-button" *ngIf="!isCalling"
+              (click)="call()">Start call
+      </button>
+      <button type="button" mat-raised-button color="button-color" class="course-button"
+              *ngIf="isCalling && !hasCallEnded" (click)="endCall()">End call
+      </button>
+    </div>
+    <div style="padding-top: 10px">
+      <button type="button" mat-raised-button color="button-color" class="course-button" *ngIf="!isRecording && this.isReadyToRecord()"
+              (click)="startRecording()">Start recording
+      </button>
+      <button type="button" mat-raised-button color="button-color" class="course-button" *ngIf="isRecording"
+              (click)="stopRecording()">Stop recording
+      </button>
+    </div>
+  </div>
+  <div style="padding-top: 10px">
+    <button type="button" mat-raised-button color="warn" class="course-button" (click)="sendRecord()">Send
+      recording
+    </button>
+  </div>
+
+</div>
